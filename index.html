@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crunchy Banana Six</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h2>Masuk / Daftar</h2>
+      <input type="text" id="username" placeholder="Nama kamu"/>
+      <button onclick="login()">Masuk</button>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">
+      <img src="img/logo.png" alt="Logo" class="logo"/>
+      <span>Crunchy Banana Six</span>
+    </div>
+    <input type="checkbox" id="navToggle" class="sr-only">
+    <label for="navToggle" class="hamburger"><i class="fas fa-bars"></i></label>
+    <div class="nav-links">
+      <a href="#home" onclick="closeNav()">Home</a>
+      <a href="#deskripsi" onclick="closeNav()">Tentang</a>
+      <a href="#etalase" onclick="closeNav()">Etalase</a>
+      <a href="#katalog" onclick="closeNav()">Katalog</a>
+      <a href="#cart" onclick="toggleCart(); closeNav();">Keranjang <span id="cartCount">0</span></a>
+      <a href="#" onclick="logout(); closeNav();">Keluar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Crunchy Banana Six</h1>
+    <p>Pisang nugget crispy dengan topping creamy yang bikin nagih!</p>
+  </section>
+
+  <!-- DESKRIPSI USAHA & TUJUAN -->
+  <section id="deskripsi" class="about">
+    <h2>Deskripsi Usaha & Tujuan Kami</h2>
+    <img src="img/foto kelompok.jpg" alt="Foto Tim" class="tim-photo"/>
+    
+    <p>Nugget pisang adalah salah satu inovasi makanan ringan yang terbuat dari bahan dasar pisang matang berkualitas. Berbeda dengan pisang goreng biasa, nugget pisang diolah melalui beberapa tahap, mulai dari penghalusan pisang, pencampuran dengan tepung dan bahan tambahan lain, pembentukan adonan menjadi potongan kecil, pengukusan, pelapisan dengan tepung roti (panir), hingga digoreng sampai berwarna keemasan. Hasilnya adalah camilan dengan tekstur renyah di luar namun tetap lembut, manis, dan legit di dalam.</p>
+
+    <p>Produk ini semakin menarik karena dapat dikreasikan dengan berbagai topping modern sesuai selera konsumen, seperti cokelat leleh, keju parut, matcha, tiramisu, oreo, meses, hingga kombinasi mix topping. Hal ini membuat nugget pisang tidak hanya disukai anak-anak, tetapi juga remaja, mahasiswa, pekerja muda, bahkan orang tua yang ingin mencoba camilan kekinian dengan rasa unik.</p>
+
+    <p>Selain rasanya yang lezat, nugget pisang juga memiliki nilai gizi tinggi karena pisang mengandung vitamin A, vitamin C, vitamin B6, kalium, serat, serta energi yang baik untuk tubuh. Artinya, nugget pisang tidak hanya sekadar jajanan, tetapi juga bisa menjadi pilihan camilan sehat yang mengenyangkan.</p>
+
+    <p>Dari sisi usaha, nugget pisang memiliki banyak keunggulan. Bahan baku utamanya mudah ditemukan di pasar dengan harga terjangkau, proses pembuatannya sederhana, modal relatif kecil, dan produk ini bisa dikembangkan dengan berbagai variasi rasa maupun tampilan. Ditambah lagi, tren makanan berbasis pisang saat ini sedang naik daun sehingga peluang bisnis nugget pisang sangat terbuka lebar.</p>
+
+    <p>Target pasar nugget pisang meliputi pelajar, mahasiswa, pekerja, dan keluarga yang membutuhkan makanan ringan praktis, lezat, dan terjangkau. Usaha ini bisa dijalankan dalam skala rumahan, dijual di bazar sekolah, kantin, stand kuliner, maupun dipasarkan melalui platform online seperti GoFood, GrabFood, ShopeeFood, dan media sosial. Dengan kemasan yang higienis, menarik, dan mudah dibawa, nugget pisang juga cocok dijadikan oleh-oleh atau hadiah kecil untuk teman dan keluarga.</p>
+  </section>
+
+  <!-- ETALASE PRODUK -->
+  <section id="etalase" class="section">
+    <h2 class="section-title">Etalase Produk</h2>
+    <div class="products">
+      <div class="card">
+        <img src="img/pisang nugget coklat.jpg" alt="Pisang Nugget Coklat"/>
+        <h3>Pisang Nugget Coklat</h3>
+        <p class="price">Rp 7.000</p>
+        <button onclick="addToCart(1)">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="img/pisang nugget strawberry.jpg" alt="Pisang Nugget Strawberry"/>
+        <h3>Pisang Nugget Strawberry</h3>
+        <p class="price">Rp 7.000</p>
+        <button onclick="addToCart(2)">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="img/pisang nugget original.jpg" alt="Pisang Nugget Original"/>
+        <h3>Pisang Nugget Original</h3>
+        <p class="price">Rp 5.000</p>
+        <button onclick="addToCart(3)">Tambah ke Keranjang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- KATALOG PRODUK -->
+  <section id="katalog" class="section">
+    <h2 class="section-title">Katalog Produk</h2>
+    <div class="katalog">
+      <div class="katalog-card">
+        <img src="img/katalog.jpg" alt="Pisang Nugget Combo"/>
+        <h3>Crunchy Banana Six</h3>
+        <p> Kami memiliki 3 rasa sekaligus: Coklat, Strawberry & Original. Pas untuk nongkrong bareng teman!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KERANJANG SIDEBAR -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <h3>Keranjang Belanja</h3>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <strong>Total: Rp <span id="totalPrice">0</span></strong>
+    </div>
+    <button class="btn-checkout" onclick="checkoutWhatsApp()">Pesan via WhatsApp</button>
+    <button class="btn-close" onclick="toggleCart()">Tutup</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Hubungi kami:</p>
+    <a href="https://wa.me/6282143000195" target="_blank" class="sosmed">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://www.instagram.com/crunchybananasix_" target="_blank" class="sosmed">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
